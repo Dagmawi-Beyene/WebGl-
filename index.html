@@ -1,42 +1,14 @@
 <html>
-  <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-  </head>
-  <body>
-    <script>
-
-      // initialize canvas
-      function setup() {
-        createCanvas(500, 500, WEBGL);
-        movie = createVideo(['assets/snow-white.mp4']);
-        movie.elt.muted = true;
-        movie.loop();
-        movie.hide();
-      }
-
-      // rotation angles
-      let theta_x = 0;
-      let theta_y = 0;
-      let theta_z = 0;
-      let movie;
-
-      // this function runs in loop
-      function draw() {
-        background(0);
-
-        // rotation of cube
-        translate(0, 0, 0);
-        push();
-        rotateX(theta_x);
-        rotateY(theta_y);
-        rotateZ(theta_z);
-        texture(movie);
-        box(200, 200, 200);
-        pop();
-        theta_x += 0.005;
-        theta_y += 0.01;
-        theta_z += 0.01;
-      }
-    </script>
-  </body>
+	<head>
+		<title>WebGL - Rotating Cube</title>
+	</head>
+	<body onload="InitDemo();">
+		<canvas id="game-surface" width="800" height="600">
+			Your browser does not support HTML5
+		</canvas>
+		<br />
+		<i>Demo is above this text</i>
+		<script src="gl-matrix.js"></script>
+		<script src="app.js"></script>
+	</body>
 </html>
